@@ -329,7 +329,7 @@
 - 获取位置信息 - `geolocation`
 
   ```JavaScript
-  navigator.geolocation.getCurrentPosition(function(pos) { 		  
+  navigator.geolocation.getCurrentPosition(function(pos) {           
       console.log(pos.coords.latitude)
       console.log(pos.coords.longitude)
   })
@@ -431,7 +431,7 @@
 <script src="other.js"></script>
 <script src="jquery.js"></script>
 <script>
-	jQuery.noConflict();
+    jQuery.noConflict();
     jQuery(function() {
         jQuery('div').hide();
     });
@@ -478,17 +478,17 @@ Ajax是一种在无需重新加载整个网页的情况下，能够更新部分�
 
    ```HTML
    <div id="app">
-   	<h1>{{ product }}库存信息</h1>
+       <h1>{{ product }}库存信息</h1>
    </div>
    
    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
    <script>
-   	const app = new Vue({
-   		el: '#app',
-   		data: {
-   			product: 'iPhone X'
-   		}
-   	});
+       const app = new Vue({
+           el: '#app',
+           data: {
+               product: 'iPhone X'
+           }
+       });
    </script>
    ```
 
@@ -496,30 +496,30 @@ Ajax是一种在无需重新加载整个网页的情况下，能够更新部分�
 
    ```HTML
    <div id="app">
-   	<h1>库存信息</h1>
+       <h1>库存信息</h1>
        <hr>
-   	<ul>
-   		<li v-for="product in products">
-   			{{ product.name }} - {{ product.quantity }}
-   			<span v-if="product.quantity === 0">
-   				已经售罄
-   			</span>
-   		</li>
-   	</ul>
+       <ul>
+           <li v-for="product in products">
+               {{ product.name }} - {{ product.quantity }}
+               <span v-if="product.quantity === 0">
+                   已经售罄
+               </span>
+           </li>
+       </ul>
    </div>
    
    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
    <script>
-   	const app = new Vue({
-   		el: '#app',
-   		data: {
-   			products: [
-   				{"id": 1, "name": "iPhone X", "quantity": 20},
-   				{"id": 2, "name": "华为 Mate20", "quantity": 0},
-   				{"id": 3, "name": "小米 Mix3", "quantity": 50}
-   			]
-   		}
-   	});
+       const app = new Vue({
+           el: '#app',
+           data: {
+               products: [
+                   {"id": 1, "name": "iPhone X", "quantity": 20},
+                   {"id": 2, "name": "华为 Mate20", "quantity": 0},
+                   {"id": 3, "name": "小米 Mix3", "quantity": 50}
+               ]
+           }
+       });
    </script>
    ```
 
@@ -527,38 +527,38 @@ Ajax是一种在无需重新加载整个网页的情况下，能够更新部分�
 
    ```HTML
    <div id="app">
-   	<h1>库存信息</h1>
-   	<hr>
-   	<ul>
-   		<li v-for="product in products">
-   			{{ product.name }} - {{ product.quantity }}
-   			<span v-if="product.quantity === 0">
-   				已经售罄
-   			</span>
-   		</li>
-   	</ul>
-   	<h2>库存总量：{{ totalQuantity }}台</h2>
+       <h1>库存信息</h1>
+       <hr>
+       <ul>
+           <li v-for="product in products">
+               {{ product.name }} - {{ product.quantity }}
+               <span v-if="product.quantity === 0">
+                   已经售罄
+               </span>
+           </li>
+       </ul>
+       <h2>库存总量：{{ totalQuantity }}台</h2>
    </div>
    
    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
    <script>
-   	const app = new Vue({
-   		el: '#app',
-   		data: {
-   			products: [
-   				{"id": 1, "name": "iPhone X", "quantity": 20},
-   				{"id": 2, "name": "华为 Mate20", "quantity": 0},
-   				{"id": 3, "name": "小米 Mix3", "quantity": 50}
-   			]
-   		},
-   		computed: {
-   			totalQuantity() {
-   				return this.products.reduce((sum, product) => {
-   					return sum + product.quantity
-   				}, 0);
-   			}
-   		}
-   	});
+       const app = new Vue({
+           el: '#app',
+           data: {
+               products: [
+                   {"id": 1, "name": "iPhone X", "quantity": 20},
+                   {"id": 2, "name": "华为 Mate20", "quantity": 0},
+                   {"id": 3, "name": "小米 Mix3", "quantity": 50}
+               ]
+           },
+           computed: {
+               totalQuantity() {
+                   return this.products.reduce((sum, product) => {
+                       return sum + product.quantity
+                   }, 0);
+               }
+           }
+       });
    </script>
    ```
 
@@ -566,41 +566,41 @@ Ajax是一种在无需重新加载整个网页的情况下，能够更新部分�
 
    ```HTML
    <div id="app">
-   	<h1>库存信息</h1>
-   	<hr>
-   	<ul>
-   		<li v-for="product in products">
-   			{{ product.name }} - {{ product.quantity }}
-   			<span v-if="product.quantity === 0">
-   				已经售罄
-   			</span>
-   			<button @click="product.quantity += 1">
-   				增加库存
-   			</button>
-   		</li>
-   	</ul>
-   	<h2>库存总量：{{ totalQuantity }}台</h2>
+       <h1>库存信息</h1>
+       <hr>
+       <ul>
+           <li v-for="product in products">
+               {{ product.name }} - {{ product.quantity }}
+               <span v-if="product.quantity === 0">
+                   已经售罄
+               </span>
+               <button @click="product.quantity += 1">
+                   增加库存
+               </button>
+           </li>
+       </ul>
+       <h2>库存总量：{{ totalQuantity }}台</h2>
    </div>
    
    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
    <script>
-   	const app = new Vue({
-   		el: '#app',
-   		data: {
-   			products: [
-   				{"id": 1, "name": "iPhone X", "quantity": 20},
-   				{"id": 2, "name": "华为 Mate20", "quantity": 0},
-   				{"id": 3, "name": "小米 Mix3", "quantity": 50}
-   			]
-   		},
-   		computed: {
-   			totalQuantity() {
-   				return this.products.reduce((sum, product) => {
-   					return sum + product.quantity
-   				}, 0);
-   			}
-   		}
-   	});
+       const app = new Vue({
+           el: '#app',
+           data: {
+               products: [
+                   {"id": 1, "name": "iPhone X", "quantity": 20},
+                   {"id": 2, "name": "华为 Mate20", "quantity": 0},
+                   {"id": 3, "name": "小米 Mix3", "quantity": 50}
+               ]
+           },
+           computed: {
+               totalQuantity() {
+                   return this.products.reduce((sum, product) => {
+                       return sum + product.quantity
+                   }, 0);
+               }
+           }
+       });
    </script>
    ```
 
@@ -608,42 +608,42 @@ Ajax是一种在无需重新加载整个网页的情况下，能够更新部分�
 
    ```HTML
    <div id="app">
-   	<h1>库存信息</h1>
-   	<hr>
-   	<ul>
-   		<li v-for="product in products">
-   			{{ product.name }} - 
-   			<input type="number" v-model.number="product.quantity" min="0">
-   			<span v-if="product.quantity === 0">
-   				已经售罄
-   			</span>
-   			<button @click="product.quantity += 1">
-   				增加库存
-   			</button>
-   		</li>
-   	</ul>
-   	<h2>库存总量：{{ totalQuantity }}台</h2>
+       <h1>库存信息</h1>
+       <hr>
+       <ul>
+           <li v-for="product in products">
+               {{ product.name }} - 
+               <input type="number" v-model.number="product.quantity" min="0">
+               <span v-if="product.quantity === 0">
+                   已经售罄
+               </span>
+               <button @click="product.quantity += 1">
+                   增加库存
+               </button>
+           </li>
+       </ul>
+       <h2>库存总量：{{ totalQuantity }}台</h2>
    </div>
    
    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
    <script>
-   	const app = new Vue({
-   		el: '#app',
-   		data: {
-   			products: [
-   				{"id": 1, "name": "iPhone X", "quantity": 20},
-   				{"id": 2, "name": "华为 Mate20", "quantity": 0},
-   				{"id": 3, "name": "小米 Mix3", "quantity": 50}
-   			]
-   		},
-   		computed: {
-   			totalQuantity() {
-   				return this.products.reduce((sum, product) => {
-   					return sum + product.quantity
-   				}, 0);
-   			}
-   		}
-   	});
+       const app = new Vue({
+           el: '#app',
+           data: {
+               products: [
+                   {"id": 1, "name": "iPhone X", "quantity": 20},
+                   {"id": 2, "name": "华为 Mate20", "quantity": 0},
+                   {"id": 3, "name": "小米 Mix3", "quantity": 50}
+               ]
+           },
+           computed: {
+               totalQuantity() {
+                   return this.products.reduce((sum, product) => {
+                       return sum + product.quantity
+                   }, 0);
+               }
+           }
+       });
    </script>
    ```
 
@@ -651,32 +651,32 @@ Ajax是一种在无需重新加载整个网页的情况下，能够更新部分�
 
    ```HTML
    <div id="app">
-   	<h2>库存信息</h2>
-   	<ul>
-   		<li v-for="product in products">
-   			{{ product.name }} - {{ product.quantity }}
-   			<span v-if="product.quantity === 0">
-   				已经售罄
-   			</span>
-   		</li>
-   	</ul>
+       <h2>库存信息</h2>
+       <ul>
+           <li v-for="product in products">
+               {{ product.name }} - {{ product.quantity }}
+               <span v-if="product.quantity === 0">
+                   已经售罄
+               </span>
+           </li>
+       </ul>
    </div>
    
    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
    <script>
-   	const app = new Vue({
-   		el: '#app',
-   		data: {
-   			products: []
-   		}，
-   		created() {
-   			fetch('https://jackfrued.top/api/products')
-   				.then(response => response.json())
-   				.then(json => {
-   					this.products = json
-   				});
-   		}
-   	});
+       const app = new Vue({
+           el: '#app',
+           data: {
+               products: []
+           }，
+           created() {
+               fetch('https://jackfrued.top/api/products')
+                   .then(response => response.json())
+                   .then(json => {
+                       this.products = json
+                   });
+           }
+       });
    </script>
    ```
 
@@ -708,28 +708,28 @@ Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过�
    ```HTML
    <!DOCTYPE html>
    <html>
-   	<head>
-   		<meta charset="UTF-8">
-   		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-   	</head>
-   	<body>
-   		<div id="app">
-   			<el-button @click="visible = true">点我</el-button>
-   			<el-dialog :visible.sync="visible" title="Hello world">
-   				<p>开始使用Element吧</p>
-   			</el-dialog>
+       <head>
+           <meta charset="UTF-8">
+           <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+       </head>
+       <body>
+           <div id="app">
+               <el-button @click="visible = true">点我</el-button>
+               <el-dialog :visible.sync="visible" title="Hello world">
+                   <p>开始使用Element吧</p>
+               </el-dialog>
                </div>
-   	</body>
-   	<script src="https://unpkg.com/vue/dist/vue.js"></script>
-   	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-   	<script>
-   		new Vue({
-   			el: '#app',
-   			data: {
-   				visible: false,
-   			}
-   		})
-   	</script>
+       </body>
+       <script src="https://unpkg.com/vue/dist/vue.js"></script>
+       <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+       <script>
+           new Vue({
+               el: '#app',
+               data: {
+                   visible: false,
+               }
+           })
+       </script>
    </html>
    ```
 
@@ -738,53 +738,53 @@ Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过�
    ```HTML
    <!DOCTYPE html>
    <html>
-   	<head>
-   		<meta charset="UTF-8">
-   		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-   	</head>
-   	<body>
-   		<div id="app">
-   			<el-table :data="tableData" stripe style="width: 100%">
-   				<el-table-column prop="date" label="日期" width="180">
-   				</el-table-column>
-   				<el-table-column prop="name" label="姓名" width="180">
-   				</el-table-column>
-   				<el-table-column prop="address" label="地址">
-   				</el-table-column>
-   			</el-table>
-   		</div>
-   	</body>
-   	<script src="https://unpkg.com/vue/dist/vue.js"></script>
-   	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-   	<script>
-   		new Vue({
-   			el: '#app',
-   			data: {
-   				tableData:  [
-   					{
-   						date: '2016-05-02',
-   						name: '王一霸',
-   						address: '上海市普陀区金沙江路 1518 弄'
-   					}, 
-   					{
-   						date: '2016-05-04',
-   						name: '刘二狗',
-   						address: '上海市普陀区金沙江路 1517 弄'
-   					}, 
-   					{
-   						date: '2016-05-01',
-   						name: '杨三萌',
-   						address: '上海市普陀区金沙江路 1519 弄'
-   					}, 
-   					{
-   						date: '2016-05-03',
-   						name: '陈四吹',
-   						address: '上海市普陀区金沙江路 1516 弄'
-   					}
-   				]
-   			}
-   		})
-   	</script>
+       <head>
+           <meta charset="UTF-8">
+           <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+       </head>
+       <body>
+           <div id="app">
+               <el-table :data="tableData" stripe style="width: 100%">
+                   <el-table-column prop="date" label="日期" width="180">
+                   </el-table-column>
+                   <el-table-column prop="name" label="姓名" width="180">
+                   </el-table-column>
+                   <el-table-column prop="address" label="地址">
+                   </el-table-column>
+               </el-table>
+           </div>
+       </body>
+       <script src="https://unpkg.com/vue/dist/vue.js"></script>
+       <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+       <script>
+           new Vue({
+               el: '#app',
+               data: {
+                   tableData:  [
+                       {
+                           date: '2016-05-02',
+                           name: '王一霸',
+                           address: '上海市普陀区金沙江路 1518 弄'
+                       }, 
+                       {
+                           date: '2016-05-04',
+                           name: '刘二狗',
+                           address: '上海市普陀区金沙江路 1517 弄'
+                       }, 
+                       {
+                           date: '2016-05-01',
+                           name: '杨三萌',
+                           address: '上海市普陀区金沙江路 1519 弄'
+                       }, 
+                       {
+                           date: '2016-05-03',
+                           name: '陈四吹',
+                           address: '上海市普陀区金沙江路 1516 弄'
+                       }
+                   ]
+               }
+           })
+       </script>
    </html>
    ```
 
@@ -803,60 +803,60 @@ Bulma是一个基于Flexbox的现代化的CSS框架，其初衷就是移动优�
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Bulma</title>
-	<link href="https://cdn.bootcss.com/bulma/0.7.4/css/bulma.min.css" rel="stylesheet">
-	<style type="text/css">
-		div { margin-top: 10px; }
-		.column { color: #fff; background-color: #063; margin: 10px 10px; text-align: center; }
-	</style>
+    <meta charset="UTF-8">
+    <title>Bulma</title>
+    <link href="https://cdn.bootcss.com/bulma/0.7.4/css/bulma.min.css" rel="stylesheet">
+    <style type="text/css">
+        div { margin-top: 10px; }
+        .column { color: #fff; background-color: #063; margin: 10px 10px; text-align: center; }
+    </style>
 </head>
 <body>
-	<div class="columns">
-		<div class="column">1</div>
-		<div class="column">2</div>
-		<div class="column">3</div>
-		<div class="column">4</div>
-	</div>
-	<div>
-		<a class="button is-primary">Primary</a>
-		<a class="button is-link">Link</a>
-		<a class="button is-info">Info</a>
-		<a class="button is-success">Success</a>
-		<a class="button is-warning">Warning</a>
-		<a class="button is-danger">Danger</a>
-	</div>
-	<div>
-		<progress class="progress is-danger is-medium" max="100">60%</progress>
-	</div>
-	<div>
-		<table class="table is-hoverable">
-			<tr>
-				<th>One</th>
-				<th>Two</th>
-			</tr>
-			<tr>
-				<td>Three</td>
-				<td>Four</td>
-			</tr>
-			<tr>
-				<td>Five</td>
-				<td>Six</td>
-			</tr>
-			<tr>
-				<td>Seven</td>
-				<td>Eight</td>
-			</tr>
-			<tr>
-				<td>Nine</td>
-				<td>Ten</td>
-			</tr>
-			<tr>
-				<td>Eleven</td>
-				<td>Twelve</td>
-			</tr>
-		</table>
-	</div>
+    <div class="columns">
+        <div class="column">1</div>
+        <div class="column">2</div>
+        <div class="column">3</div>
+        <div class="column">4</div>
+    </div>
+    <div>
+        <a class="button is-primary">Primary</a>
+        <a class="button is-link">Link</a>
+        <a class="button is-info">Info</a>
+        <a class="button is-success">Success</a>
+        <a class="button is-warning">Warning</a>
+        <a class="button is-danger">Danger</a>
+    </div>
+    <div>
+        <progress class="progress is-danger is-medium" max="100">60%</progress>
+    </div>
+    <div>
+        <table class="table is-hoverable">
+            <tr>
+                <th>One</th>
+                <th>Two</th>
+            </tr>
+            <tr>
+                <td>Three</td>
+                <td>Four</td>
+            </tr>
+            <tr>
+                <td>Five</td>
+                <td>Six</td>
+            </tr>
+            <tr>
+                <td>Seven</td>
+                <td>Eight</td>
+            </tr>
+            <tr>
+                <td>Nine</td>
+                <td>Ten</td>
+            </tr>
+            <tr>
+                <td>Eleven</td>
+                <td>Twelve</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
 ```

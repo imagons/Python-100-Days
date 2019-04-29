@@ -13,7 +13,7 @@ def main():
         index += 1
         index %= len(persons)
     for person in persons:
-	    print('基' if person else '非', end='')
+        print('基' if person else '非', end='')
     print()
 
 

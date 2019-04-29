@@ -17,5 +17,5 @@ print(doc.paragraphs[0].text)
 
 content = []
 for para in doc.paragraphs:
-	content.append(para.text)
+    content.append(para.text)
 print(''.join(content))

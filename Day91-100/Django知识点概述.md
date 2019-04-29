@@ -657,9 +657,9 @@ def simple_middleware(get_response):
     
     def middleware(request, *args, **kwargs):
         
-		response = get_response(request, *args, **kwargs)
+        response = get_response(request, *args, **kwargs)
         
-		return response
+        return response
     
     return middleware
 ```
@@ -1311,8 +1311,8 @@ if request.method == 'POST' and '_method' in request.POST:
 <script src="js/jquery.min.js"></script>
 <script>
     // 将$让出给其他的JavaScript库使用
-	jQuery.noConflict();
-	jQuery(function() {
+    jQuery.noConflict();
+    jQuery(function() {
         jQuery('#okBtn').on('click', function() {});
     });
 </script>
@@ -1324,8 +1324,8 @@ if request.method == 'POST' and '_method' in request.POST:
 <button id="okBtn">点我</button>
 <script src="js/jquery.min.js"></script>
 <script>
-    var btn = document.getElementById('okBtn');	// 原生JavaScript对象(使用相对麻烦)
-    var $btn = $('#okBtn');	// jQuery对象(拥有更多的属性和方法而且没有浏览器兼容性问题)
+    var btn = document.getElementById('okBtn');    // 原生JavaScript对象(使用相对麻烦)
+    var $btn = $('#okBtn');    // jQuery对象(拥有更多的属性和方法而且没有浏览器兼容性问题)
     $btn.on('click', function() {});
     // $(btn)可以将原生JavaScript对象转成jQuery对象
     // $btn.get(0)或$btn[0]可以获得原生的JavaScript对象
@@ -1347,7 +1347,7 @@ INSTALLED_APPS = [
 
 ]
 REST_FRAMEWORK = {
-  	
+      
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.OrderingFilter',
@@ -1425,7 +1425,7 @@ class APIView(View):
     metadata_class = api_settings.DEFAULT_METADATA_CLASS
     versioning_class = api_settings.DEFAULT_VERSIONING_CLASS
 
-   	# 此处省略下面的代码
+       # 此处省略下面的代码
 ```
 
 ```Python

@@ -14,12 +14,12 @@ print(seq)
 gen = (x * x for x in range(10))
 print(gen)
 for x in gen:
-	print(x)
+    print(x)
 
 num = 10
 gen = (x ** y for x, y in zip(range(1, num), range(num - 1, 0, -1)))
 print(gen)
 n = 1
 while n < num:
-	print(next(gen))
-	n += 1
+    print(next(gen))
+    n += 1

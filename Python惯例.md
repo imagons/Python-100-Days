@@ -119,7 +119,7 @@
    
    d = {'x': '5'}
    if 'x' in d and isinstance(d['x'], str) \
-   		and d['x'].isdigit():
+           and d['x'].isdigit():
        value = int(d['x'])
        print(value)
    else:
@@ -134,7 +134,7 @@
    
    fruits = ['orange', 'grape', 'pitaya', 'blueberry']
    for index, fruit in enumerate(fruits):
-   	print(index, ':', fruit)
+       print(index, ':', fruit)
    ```
 
    **不好**的代码：
